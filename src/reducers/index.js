@@ -38,6 +38,7 @@ const reducer = (state = initialState, action) => {
         ...state,
         smurfs: [...state.smurfs, newSmurf]
       };
+
     case SET_ERROR:
       return {
         ...state,

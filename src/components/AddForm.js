@@ -3,16 +3,12 @@ import { setError, addSmurf } from './../actions';
 import { connect } from 'react-redux';
 
 const AddForm = (props) => {
-    console.log('add form props', props)
     const [state, setState] = useState({
         name:"",
         position:"",
         nickname:"",
         description:""
     });
-
-    //remove when error state is added
-    // const errorMessage = "";
 
     const handleChange = e => {
         setState({
@@ -60,7 +56,6 @@ const AddForm = (props) => {
 }
 
 const mapStateToProps = (state) => {
-    console.log('addform state', state)
     return {
         errorMessage: state.errorMessage
     }
