@@ -13,7 +13,7 @@ const reducer = (state = initialState, action) => {
         ...state,
         smurfs: [],
         isLoading: true,
-        error: ''
+        errorMessage: ''
       };
     case FETCH_SUCCESS:
       return {
