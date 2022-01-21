@@ -3,12 +3,12 @@ import ReactDOM from "react-dom";
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 
-import { thunk } from 'redux-thunk';
-import { logger } from 'redux-logger';
+import thunk from 'redux-thunk';
+import logger from 'redux-logger';
 
 import "./index.css";
 import App from "./App";
-import { reducer } from './reducers';
+import reducer from "./reducers";
 
 const { worker } = require('./mocks/browser');
 worker.start();
