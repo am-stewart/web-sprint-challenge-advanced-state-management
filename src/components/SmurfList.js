@@ -1,11 +1,10 @@
 import React from 'react';
-import Smurf from './Smurf';
 import { connect } from 'react-redux';
 
- const SmurfList = (props)=> {
-     const { smurfs, isLoading } = props;
+import Smurf from './Smurf';
 
-    // const isLoading = false;
+ const SmurfList = (props)=> {
+    const { isLoading } = props;
     // const testSmurf = {
     //     id:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
     //     name:'Poppa Smurf',
@@ -19,9 +18,10 @@ import { connect } from 'react-redux';
     }
 
     return(<div className="listContainer">
-        {
-           smurfs.map(smurf =><Smurf key={smurfs.id} smurf={smurf}/>) 
-        }
+      {
+        props.smurfs.map(smurf=><Smurf key={smurf.id} smurf={smurf}/>)
+      }
+
     </div>);
 }
 const mapStateToProps = (state) => {

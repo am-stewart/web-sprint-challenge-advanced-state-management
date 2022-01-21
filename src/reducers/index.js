@@ -1,13 +1,13 @@
-import { FETCH_START, FETCH_SUCCESS, FETCH_FAIL, ADD_SMURF } from './../actions';
+import { FETCH_START, FETCH_SUCCESS, FETCH_FAIL, ADD_SMURF, SET_ERROR } from './../actions';
 
 export const initialState = {
   smurfs: [],
   isLoading: false,
-  error: ''
-}
+  errorMessage: ''
+};
 
-const reducer = (state = initialState, action)=>{
-  switch(action.type){
+const reducer = (state = initialState, action) => {
+  switch(action.type) {
     case FETCH_START:
       return {
         ...state,
@@ -19,15 +19,15 @@ const reducer = (state = initialState, action)=>{
       return {
         ...state,
         smurfs: action.payload,
-        isFetching: false,
-        error: ''
+        isLoading: false,
+        errorMessage: ''
       };
     case FETCH_FAIL:
       return {
         ...state,
         smurfs: [],
-        isFetching: false,
-        error: action.payload
+        isLoading: false,
+        errorMessage: action.payload
       };
     case ADD_SMURF:
       const newSmurf = {
@@ -37,11 +37,16 @@ const reducer = (state = initialState, action)=>{
       return {
         ...state,
         smurfs: [...state.smurfs, newSmurf]
+      };
+    case SET_ERROR:
+      return {
+        ...state,
+        errorMessage: 'Name, Position, and Nickname are required.'
       }
     default:
       return state;
   }
-}
+};
 
 //**************DO NOT EDIT ANY CODE BEYOND THIS POINT**************//
 export default reducer;
