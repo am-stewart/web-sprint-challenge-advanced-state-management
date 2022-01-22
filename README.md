@@ -117,7 +117,7 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 2. In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
   -Actions are objects that contain information and have a type to tell what action to perform.
   -Reducers are functions that take the action/payload and return a new object with updated state.
-  -Store is a centralized object where state is held. This allows other components to access it without the need for prop drilling. 
+  -Store is a centralized object where state is held. This allows other components to access it without the need for prop drilling. It is knows as the single source of truth because all of the application's state lives in that one spot.
 
 3. What does `redux-thunk` allow us to do? How does it change our `action-creators`?
   Redux-thunk allows us to return a function from a function and use dispatch multiple times in our component. It changes our action-creators but allowing us create more complex actions.

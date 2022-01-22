@@ -11,6 +11,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
 
 const App = ({dispatch})=> {
+  
   useEffect(() => {
     dispatch(fetchSmurfs());
   },[])
