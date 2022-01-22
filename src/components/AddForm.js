@@ -24,7 +24,7 @@ const AddForm = (props) => {
             props.dispatch(setError(props.errorMessage))
         } else {
             //dispatch an addSmurf action
-            props.dispatch(addSmurf());
+            props.dispatch(addSmurf({name: state.name, nickname: state.nickname, description: state.description, position: state.position}));
         }
     }
 
